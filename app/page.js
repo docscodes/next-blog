@@ -1,7 +1,7 @@
-function Card({text = "Default text"}) {
+function Card({ children }) {
   return (
     <div className="border rounded-md border-gray-600 p-4">
-      Card component: {text}
+      {children}
     </div>
   );
 }
@@ -13,8 +13,8 @@ export default function Home() {
     <>
       <div className="p-20 space-y-4">
         <div>Hello, {name}</div>
-        <Card text="This is being passed from the parent" />
-        <Card text={"This is JS!"} />
+        <Card>This is being passed from the parent</Card>
+        <Card><Card>Nested component</Card></Card>
         <Card />
         <Card />
         <Card />
