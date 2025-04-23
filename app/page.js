@@ -1,7 +1,7 @@
-function Card(props) {
+function Card({text = "Default text"}) {
   return (
     <div className="border rounded-md border-gray-600 p-4">
-      Card component: {props.text}
+      Card component: {text}
     </div>
   );
 }
@@ -14,7 +14,7 @@ export default function Home() {
       <div className="p-20 space-y-4">
         <div>Hello, {name}</div>
         <Card text="This is being passed from the parent" />
-        <Card />
+        <Card text={"This is JS!"} />
         <Card />
         <Card />
         <Card />
