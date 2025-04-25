@@ -1,4 +1,6 @@
-'use client';
+"use client";
+
+import { useState } from "react";
 
 function Card({ children }) {
   return (
@@ -9,24 +11,25 @@ function Card({ children }) {
 }
 
 export default function Home() {
+  const [label, setLabel] = useState("Show");
   const name = "Piotr";
 
-  const handleClick = (e) => {
-    // e.preventDefault();
-    // console.log(e);
-    alert('Hello!');
-  }
+  const handleClick = () => {
+    setLabel(label == "Show" ? "Hide" : "Show");
+  };
 
   return (
     <>
       <div className="p-20 space-y-4">
         <div>Hello, {name}</div>
         <Card>This is being passed from the parent</Card>
-        <Card><Card>Nested component</Card></Card>
+        <Card>
+          <Card>Nested component</Card>
+        </Card>
         <Card />
         <Card />
         <Card />
-        <button onClick={handleClick}>Click me!</button>
+        <button onClick={handleClick}>{label}</button>
       </div>
     </>
   );
