@@ -20,10 +20,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <header className="p-20 border border-yellow-400">I am be visible everywhere!</header>
+        <main>{children}</main>
       </body>
     </html>
   );
