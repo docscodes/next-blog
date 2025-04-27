@@ -1,7 +1,8 @@
-export const dynamic = "force-dynamic";
+//export const dynamic = "force-dynamic";
 
 export default async function ProjectsPage() {
-  const response = await fetch("http://localhost:8000/repos", { next: { revalidate: 3 } });
+  //const response = await fetch("http://localhost:8000/repos", { next: { revalidate: 3 } });
+  const response = await fetch("http://localhost:8000/repos", { cache: "no-cache" });
   const repos = await response.json();
 
   return (
