@@ -1,3 +1,4 @@
+import Chatbot from "@/components/chatbot";
 import Header from "@/components/header";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
         <main className="mt-12">{children}</main>
+        <Chatbot />
       </body>
     </html>
   );
