@@ -3,7 +3,7 @@ import Counter from "./counter";
 
 export default function Header() {
   return (
-    <header className="p-20 border border-yellow-400">
+    <header>
       <ul className="flex space-x-4">
         <li><Link href="/">Home</Link></li>
         <li><Link href="/about">About</Link></li>
