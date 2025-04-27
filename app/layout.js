@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
-        <main>{children}</main>
+        <main className="mt-12">{children}</main>
       </body>
     </html>
   );
