@@ -1,4 +1,6 @@
 export default function AboutLayout({ children }) {
+  // throw new Error('ooops');
+
   return (
     <div>
       <div>{children}</div>

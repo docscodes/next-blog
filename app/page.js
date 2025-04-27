@@ -3,7 +3,7 @@
 import Card from "@/components/card";
 import { useState } from "react";
 
-export default function Home() {
+export default function Home({ searchParams }) {
   const [isVisible, setIsVisible] = useState(true);
   const [names, setNames] = useState(["Piotr", "John", "Terry"]);
   const name = "Piotr";
@@ -15,7 +15,11 @@ export default function Home() {
   const handleAdd = () => {
     setNames([...names, "New element!"]);
   };
+  
   const cards = isVisible && names.map((name, index) => <Card key={index}>{name}</Card>);
+
+  console.log(searchParams);
+  if (searchParams.error) throw new Error("Hello!");
 
   return (
     <>
