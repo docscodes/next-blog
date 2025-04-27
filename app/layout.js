@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -21,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <header className="p-20 border border-yellow-400">I am be visible everywhere!</header>
+        <Header />
         <main>{children}</main>
       </body>
     </html>
