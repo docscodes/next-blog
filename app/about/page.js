@@ -1,4 +1,5 @@
 const AboutPage = () => {
+  //throw new Error('ooops');
   return <div>AboutPage</div>;
 };
 
