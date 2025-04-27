@@ -1,5 +1,20 @@
-const ProjectsPage = () => {
-  return <div>ProjectsPage</div>;
-};
+export default async function ProjectsPage() {
+  const response = await fetch("http://localhost:8000/repos");
+  const repos = await response.json();
 
-export default ProjectsPage;
+  return (
+    <div className="p-20">
+      <h1 className="mb-8 text-xl">Projects</h1>
+
+      <ul>
+        {repos.map((repo) => (
+          <li key={repo.id} className="mb-4">
+            <div>{repo.title}</div>
+            <div>{repo.description}</div>
+            <div>{repo.stargazers_count}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
