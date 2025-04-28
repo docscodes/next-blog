@@ -1,5 +1,5 @@
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
-
 const titles = {
   first: "Hello First!",
   second: "Hello Second!",
@@ -18,5 +18,14 @@ export default function BlogPage({ params }) {
   if (!["first", "second"].includes(params.slug)) {
     notFound();
   }
-  return <>Hello! {params.slug}</>;
+
+  return (
+    <article className="prose dark:prose-invert">
+      <MDXRemote source={`# Hello World
+
+      This is from Server Components!
+      `}
+      />
+    </article>
+  );
 }
