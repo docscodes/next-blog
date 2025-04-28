@@ -1,7 +1,6 @@
-import fs from "fs";
+import { loadPost } from "@/lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
-import path from "path";
 
 const titles = {
   first: "Hello First!",
@@ -25,7 +24,7 @@ export default function BlogPage({ params }) {
   let markdown;
 
   try {
-    markdown = fs.readFileSync(path.join(process.cwd(), "content", `${params.slug}.mdx`));
+    markdown = loadPost(params.slug);
   } catch (e) {
     notFound();
   }
