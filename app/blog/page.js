@@ -1,8 +1,9 @@
 import { getPosts } from "@/lib/posts";
 import Link from "next/link";
 
-export default async function BlogPostsPage() {
-  const posts = await getPosts();
+export default async function BlogPostsPage({ searchParams }) {
+  const tags = searchParams.tags?.split(",");
+  const posts = await getPosts({ tags });
 
   return (
     <>
