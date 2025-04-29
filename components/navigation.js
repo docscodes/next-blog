@@ -9,6 +9,7 @@ export default function Navigation() {
         <li><Link href="/about" className={styles.link}>About</Link></li>
         <li><Link href="/about/projects" className={styles.link}>Projects</Link></li>
         <li><Link href="/photos" className={styles.link}>Photos</Link></li>
+        <li><Link href="/blog" className={styles.link}>Blog</Link></li>
       </ul>
     </nav>
   );
