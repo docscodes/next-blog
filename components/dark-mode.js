@@ -15,8 +15,8 @@ const nextModeIcons = {
   ),
 };
 
-export default function DarkMode() {
-  const { theme, toggleTheme } = useDarkMode()
+export default function DarkMode({ defaultTheme }) {
+  const { theme, toggleTheme } = useDarkMode(defaultTheme)
 
   return <button onClick={toggleTheme}>{nextModeIcons[theme]}</button>;
 }

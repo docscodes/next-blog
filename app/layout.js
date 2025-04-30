@@ -1,5 +1,6 @@
 import Chatbot from "@/components/chatbot";
 import Header from "@/components/header";
+import useServerDarkMode from "@/hooks/use-server-dark-mode";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -16,16 +17,17 @@ const geistMono = localFont({
 
 export const metadata = {
   title: {
-    template: '%s | My Name',
-    default: 'My Name'
+    template: "%s | My Name",
+    default: "My Name",
   },
 };
 
 export default function RootLayout({ children }) {
   //throw new Error('ooops');
+  const theme = useServerDarkMode();
 
   return (
-    <html lang="en">
+    <html lang="en" className={theme}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
         <main className="mt-12">{children}</main>
