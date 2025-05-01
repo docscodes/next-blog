@@ -12,7 +12,7 @@ export default async function Home() {
     <>
       <section className="mb-8">
         <H1>Welcome to my page!</H1>
-        <p>My name is docscodes, I am a web developer.</p>
+        <p>I am a web developer.</p>
         <p>
           Checkout my{" "}
           <Link href="/about/projects" className="underline">projects</Link>,{" "}
