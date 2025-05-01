@@ -1,9 +1,16 @@
-import { getPost as getPostNotCached } from "@/lib/posts";
+import { getPost as getPostNotCached, getPosts } from "@/lib/posts";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cache } from "react";
 
 const getPost = cache(async (slug) => await getPostNotCached(slug));
+
+export async function generateStaticParams() {
+  const { posts } = await getPosts({ limit: 1000 });
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export async function generateMetadata({ params }) {
   try {
